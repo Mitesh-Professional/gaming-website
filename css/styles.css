@@ -1,0 +1,577 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #fff;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: #1f1f1f; /* Dark background */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.navbar .logo {
+    color: #ff0000; /* Red logo */
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links li {
+    display: inline-block;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #ff6347; /* Light red */
+    transform: scale(1.1); /* Slight hover zoom */
+}
+
+/* Hero Section with RGB Effect */
+.hero {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.8), rgba(0, 0, 0, 0.8)); /* Red and Black gradient with transparency */
+    text-align: center;
+    padding: 120px 20px;
+    color: white;
+    border-bottom: 5px solid #ff6347; /* Light red border */
+    position: relative;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7); /* Subtle shadow effect inside */
+}
+
+/* Hero Title */
+.hero-title {
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8), 0px 0px 15px rgba(255, 99, 71, 0.7); /* Glowing text */
+    animation: slideIn 2s ease-out; /* Animation to make the title slide in */
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: rgba(255, 255, 255, 0.8); /* Slightly faded white */
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Hero Button */
+.hero .btn {
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #ff0000; /* Bright Red Background */
+    border: 2px solid #d32f2f; /* Slightly darker red border */
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg, #ff0000, #d32f2f); /* Gradient from Red to Dark Red */
+    background-size: 200% 200%;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4); /* Glowing shadow effect */
+    transition: all 0.3s ease;
+    animation: pulse 1.5s infinite; /* Pulsing effect on the button */
+}
+
+/* On Hover */
+.hero .btn:hover {
+    background-position: 100% 0;
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0px 10px 40px rgba(255, 0, 0, 0.6);
+}
+
+/* RGB Glowing Border Effect */
+.hero .btn::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #ff6347, #ff0000, #ff6347);
+    z-index: -1;
+    filter: blur(6px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    border-radius: 35px;
+}
+
+/* RGB Glowing Border Effect on Hover */
+.hero .btn:hover::before {
+    opacity: 1;
+    filter: blur(8px);
+    box-shadow: 0 0 10px rgba(255, 99, 71, 0.6), 0 0 20px rgba(255, 99, 71, 0.6);
+}
+
+/* Animation for Sliding Title */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Pulse Animation for Button */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Featured Games Section */
+.featured-games {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.featured-games h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ff6347; /* Light red text for title */
+}
+
+.game-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.game-card {
+    background: #1f1f1f;
+    padding: 20px;
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* 3D effect on hover */
+.game-card:hover {
+    transform: translateY(-10px) scale(1.05); /* Slight floating effect */
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+.game-card img {
+    width: 100%; /* Ensure the image takes up the full width of the card */
+    height: 200px; /* Fix the height to a specific value */
+    object-fit: cover; /* Ensure images are cropped to fill the container without stretching */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.game-card img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+
+.game-card h3 {
+    font-size: 1.7rem;
+    margin: 15px 0;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.game-card p {
+    font-size: 1rem;
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Glow effect for game cards */
+.game-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 255, 255, 0.3);
+    filter: blur(8px);
+    z-index: -1;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+/* RGB Neon Effect */
+.game-card:hover::before {
+    background: rgba(0, 255, 255, 0.6);
+    filter: blur(10px);
+}
+
+/* Footer Section */
+footer {
+    background-color: #1f1f1f;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+footer .social-links {
+    margin-top: 10px;
+}
+
+footer .social-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #ff6347; /* Light red hover effect */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-thumbnails {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-card {
+        width: 90%;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero .btn {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+    }
+}
+/* Game Preview Section */
+.game-preview {
+    padding: 50px 20px;
+    background-color: #1f1f1f; /* Dark background */
+    text-align: center;
+}
+
+.game-preview h2 {
+    font-size: 2.5rem;
+    color: #ff6347; /* Light red text */
+    margin-bottom: 30px;
+}
+
+.game-frames {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.game-frame {
+    background: #2a2a2a; /* Dark background for each game frame */
+    width: 300px;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-frame img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.game-frame p {
+    color: #ccc;
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+.game-frame:hover {
+    transform: translateY(-10px); /* Slight floating effect */
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* About Section */
+.about {
+    padding: 50px 20px;
+    background-color: #121212; /* Dark background */
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: #ff6347; /* Light red text */
+    margin-bottom: 30px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 600px;
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.about-text p {
+    text-align: left;
+    margin-top: 15px;
+}
+
+/* Mobile Responsiveness for New Sections */
+@media (max-width: 768px) {
+    .game-preview h2,
+    .about h2 {
+        font-size: 2rem;
+    }
+
+    .game-frames {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-frame {
+        width: 90%;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-image {
+        max-width: 100%;
+    }
+
+    .about-text {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+/* Testimonials Section */
+.testimonials {
+    background-color: #1f1f1f; /* Dark background to differentiate it */
+    padding: 50px 20px;
+    text-align: center;
+    margin-bottom: 50px; /* Add some space below */
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    color: #ff6347; /* Light red text for the header */
+    margin-bottom: 40px; /* Space between the header and the testimonials */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.testimonial-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background: #2a2a2a; /* Slightly lighter dark background */
+    padding: 25px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #ccc; /* Light color for text */
+}
+
+.testimonial-card p {
+    font-size: 1.1rem;
+    color: #ccc; /* Light gray text */
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.testimonial-card h4 {
+    font-size: 1.2rem;
+    color: #ff6347; /* Light red for the name */
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Hover effect for testimonials */
+.testimonial-card:hover {
+    transform: translateY(-10px); /* Floating effect on hover */
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.8); /* Stronger shadow for hover effect */
+}
+
+.testimonial-card:active {
+    transform: translateY(0); /* Reset floating effect on click */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .testimonials h2 {
+        font-size: 2rem;
+    }
+
+    .testimonial-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial-card {
+        width: 90%; /* Make the cards take up more width on smaller screens */
+    }
+}
+
+
+/* Latest News Section */
+.latest-news {
+    padding: 50px 20px;
+    background-color: #1f1f1f; /* Dark background */
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.latest-news h2 {
+    font-size: 2.5rem;
+    color: #ff6347; /* Light red text */
+    margin-bottom: 30px;
+}
+
+.news-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.news-card {
+    background: #2a2a2a;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+.news-card h3 {
+    font-size: 1.7rem;
+    color: #fff;
+}
+
+.news-card p {
+    color: #ccc;
+    font-size: 1rem;
+}
+
+/* Call to Action Section */
+.cta {
+    background-color: black; /* Light red background */
+    padding: 50px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta .btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #ff0000; /* Bright Red */
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+}
