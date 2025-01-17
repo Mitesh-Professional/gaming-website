@@ -735,4 +735,58 @@ footer .social-links a:hover {
     background-color: #1e1e1e;
     margin-top: 20px;
 }
+.game-over-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
 
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    font-size: 2rem;
+    color: #FF6347;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.modal-content button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.modal-content button:hover {
+    background-color: #ff4500;
+}
+#play{
+    padding: 5px 20px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    background-color: red;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}

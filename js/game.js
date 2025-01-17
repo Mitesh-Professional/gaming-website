@@ -26,6 +26,7 @@ const tetrominos = [
 
 let board = Array.from({ length: rowCount }, () => Array(columnCount).fill(0));
 let currentTetromino, currentX, currentY, randomIndex;
+let gameOver = false;  // Flag to indicate if the game is over
 
 // Function to draw the game board
 function drawBoard() {
@@ -71,7 +72,12 @@ function moveTetromino() {
     if (collision()) {
         currentY--;
         placeTetromino();
+        clearLines(); // Clear any completed lines after placing the tetromino
         newTetromino();
+        if (collision()) {
+            gameOver = true;  // Game over if the new tetromino collides at the start
+            showGameOver();  // Show the game over modal
+        }
     }
 }
 
@@ -119,6 +125,8 @@ function rotateTetromino() {
 
 // Handle key events (Arrow Keys and Space)
 document.addEventListener('keydown', (e) => {
+    if (gameOver) return;  // Prevent actions if the game is over
+
     if (e.key === 'ArrowLeft') {
         currentX--;
         if (collision()) currentX++;
@@ -128,18 +136,57 @@ document.addEventListener('keydown', (e) => {
     } else if (e.key === 'ArrowDown') {
         moveTetromino();
     } else if (e.key === ' ') {
+        e.preventDefault();
         rotateTetromino();
     }
 });
 
+// Clear completed lines and shift the board down
+function clearLines() {
+    for (let row = rowCount - 1; row >= 0; row--) {
+        if (board[row].every(cell => cell !== 0)) {  // Check if the row is full
+            board.splice(row, 1);  // Remove the full row
+            board.unshift(Array(columnCount).fill(0));  // Add a new empty row at the top
+        }
+    }
+}
+
+// Show the "Game Over" modal
+function showGameOver() {
+    const gameOverModal = document.createElement('div');
+    gameOverModal.className = 'game-over-modal';
+    gameOverModal.innerHTML = `
+        <div class="modal-content">
+            <h2>Game Over</h2>
+            <p>Sorry, you lost!</p>
+            <button onclick="restartGame()">Restart</button>
+        </div>
+    `;
+    document.body.appendChild(gameOverModal);
+}
+
+// Restart the game
+function restartGame() {
+    document.querySelector('.game-over-modal').remove();
+    board = Array.from({ length: rowCount }, () => Array(columnCount).fill(0));
+    gameOver = false;
+    newTetromino();
+    gameLoop();
+}
+
 // Game loop
 function gameLoop() {
+    if (gameOver) return;
+
     drawBoard();
     drawTetromino();
     moveTetromino();
     setTimeout(gameLoop, 500);
 }
+document.getElementById('play').addEventListener('click',()=>{
+    // Start the game
+    newTetromino();
+    gameLoop();
+})
 
-// Start the game
-newTetromino();
-gameLoop();
+
