@@ -790,3 +790,15 @@ footer .social-links a:hover {
     font-weight: bold;
     margin-top: 10px;
 }
+
+.game-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+canvas {
+    background-color: #000;
+    display: block;
+    margin: 0 auto;
+}
+

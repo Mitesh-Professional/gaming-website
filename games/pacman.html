@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pac-Man - GameHub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">GameHub</a>
+            <ul class="nav-links">
+                <li><a href="game-list.html">Game List</a></li>
+                <li><a href="pages/about.html">About Us</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Pac-Man Game Section -->
+    <section class="game-section">
+        <div class="container">
+            <h2 class="game-title">Pac-Man</h2>
+            <p class="game-description">Help Pac-Man eat the pellets while avoiding the ghosts!</p>
+
+            <!-- Game Canvas -->
+            <div class="game-container">
+                <canvas id="pacman-game" width="500" height="500"></canvas>
+            </div>
+
+            <div class="game-controls">
+                <p>Use <strong>Arrow Keys</strong> to move Pac-Man.</p>
+                <button id="play">Play</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ultimate Game Hub. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/pacman.js" defer></script>
+</body>
+
+</html>
