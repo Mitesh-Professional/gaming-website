@@ -259,7 +259,7 @@ body {
 .footer {
     background-color: #1a1a1a;
     color: #fff;
-    padding: 40px 0;
+    padding: 40px 20px;
     font-family: Arial, sans-serif;
 }
 
@@ -344,6 +344,99 @@ body {
 .footer-bottom span {
     color: red;
 }
+
+/* Mobile and Tablet Responsiveness */
+@media (max-width: 768px) {
+    .footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footer-logo {
+        text-align: center;
+    }
+
+    .footer-logo .logo {
+        font-size: 1.8rem;
+    }
+
+    .footer-links {
+        text-align: center;
+    }
+
+    .footer-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-links a {
+        font-size: 1rem;
+    }
+
+    .footer-social {
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .social-icon {
+        font-size: 1.2rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra Small Mobile Devices (Phones) */
+@media (max-width: 480px) {
+    .footer .footer-content {
+        padding: 20px;
+    }
+
+    .footer-logo .logo {
+        font-size: 1.6rem;
+    }
+
+    .footer-links h3, .footer-social h3 {
+        font-size: 1rem;
+    }
+
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.9rem;
+    }
+}
+
+/* Desktop or Larger Screens */
+@media (min-width: 1200px) {
+    .footer .footer-content {
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    .footer-logo .logo {
+        font-size: 2rem;
+    }
+
+    .footer-links {
+        text-align: left;
+    }
+
+    .social-icons {
+        gap: 15px;
+    }
+}
+
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
@@ -796,7 +889,14 @@ body {
     border: 2px solid #ff6347;
     background-color: #1e1e1e;
     margin-top: 20px;
+    width: 100%; /* Make the canvas responsive by setting width to 100% */
+    height: auto; /* Let height adjust based on width */
+    max-width: 600px; /* Set a max-width to maintain game resolution on larger screens */
+    display: block;
+    margin: 0 auto;
 }
+
+/* Game Over Modal */
 .game-over-modal {
     position: fixed;
     top: 0;
@@ -840,7 +940,8 @@ body {
 .modal-content button:hover {
     background-color: #ff4500;
 }
-#play{
+
+#play {
     padding: 5px 20px;
     font-size: 20px;
     outline: none;
@@ -858,11 +959,67 @@ body {
     margin-bottom: 30px;
 }
 
+/* Make canvas responsive */
 canvas {
     background-color: #000;
     display: block;
     margin: 0 auto;
+    width: 100%; /* Allow the canvas to take up full width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 600px; /* Optional max-width to ensure the game doesn't stretch too wide */
 }
+
+/* Responsiveness for Small Screens */
+@media (max-width: 768px) {
+    .game-container {
+        padding: 10px;
+    }
+
+    #play {
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .modal-content p {
+        font-size: 1rem;
+    }
+
+    .modal-content button {
+        padding: 8px 18px;
+        font-size: 1rem;
+    }
+
+    #tetris-game {
+        max-width: 100%;
+        height: auto; /* Let height adjust based on width */
+    }
+}
+
+/* Responsiveness for Very Small Screens */
+@media (max-width: 480px) {
+    #play {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .modal-content p {
+        font-size: 0.9rem;
+    }
+
+    .modal-content button {
+        padding: 7px 15px;
+        font-size: 0.9rem;
+    }
+}
+
 /* General styles for the about page */
 .about {
     padding: 50px 0;
