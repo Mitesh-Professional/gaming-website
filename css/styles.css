@@ -540,6 +540,7 @@ body {
     max-width: 400px;
     border-radius: 15px;
     overflow: hidden;
+    margin: 0px 10px;
 }
 
 .about-image img {
@@ -1298,3 +1299,26 @@ canvas {
     background-color: #9c0505;
 }
 
+
+#game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}
+#restartBtn{
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}

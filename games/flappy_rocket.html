@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake - GameHub</title>
+    <title>Flappy Rocket</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" href="/assets/icons/icon.jpeg" type="image/x-icon">
 </head>
 
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container">
-            <a href="../index.html" class="logo">GameHub</a>
+            <a href="index.html" class="logo">GameHub</a>
             <ul class="nav-links">
                 <li><a href="game-list.html">Game List</a></li>
                 <li><a href="pages/about.html">About Us</a></li>
@@ -21,23 +20,14 @@
             </ul>
         </div>
     </nav>
-
-    <section class="game-section">
-        <div class="container">
-            <h2 class="game-title">Snake</h2>
-            <p class="game-description">Guide the snake to eat the food and grow longer!</p>
-    
-            <div class="game-container">
-                <canvas id="snake-game"></canvas>
-            </div>
-    
-            <div class="game-controls">
-                <p>Use <strong>Arrow Keys</strong> to move the blocks.</p>
-                <button id="play">Play</button>
-            </div>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="game-over" class="hidden">
+            <h1>Game Over</h1>
+            <button id="restartBtn">Restart</button>
         </div>
-    </section>
-    
+    </div>
+
     <!-- Footer Section -->
     <footer class="footer">
         <div class="container">
@@ -69,15 +59,14 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <p>Made with <span>&#10084;</span> by GameHub Team</p>
             </div>
         </div>
     </footer>
-
-    <script src="../js/snake.js" defer></script>
+    <script src="../js/flappy_rocket.js"></script>
 </body>
 
 </html>
