@@ -734,7 +734,7 @@ body {
 }
 
 /* Game List Section */
-.game-list {
+/* .game-list {
     padding: 50px 20px;
     background-color: #121212;
     text-align: center;
@@ -750,18 +750,18 @@ body {
     font-size: 1.2rem;
     color: #ccc;
     margin-bottom: 40px;
-}
+} */
 
 /* Game Gallery */
-.game-gallery {
+/* .game-gallery {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
-}
+} */
 
 /* Game Item (Card) */
-.game-item {
+/* .game-item {
     position: relative;
     width: 300px;
     height: 400px;
@@ -774,16 +774,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 /* Hover Effects for Game Item */
-.game-item:hover {
+/* .game-item:hover {
     transform: scale(1.05);
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.7);
-}
+} */
 
 /* Game Image Wrapper */
-.game-img-wrapper {
+/* .game-img-wrapper {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -795,17 +795,17 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 1; /* Ensure the image is visible by default */
+    opacity: 1; 
     transition: opacity 0.4s ease;
-}
+} */
 
 /* Hover Effect to Dim the Image */
-.game-item:hover .game-img-wrapper img {
-    opacity: 0.5; /* Dim the image slightly on hover */
-}
+/* .game-item:hover .game-img-wrapper img {
+    opacity: 0.5; 
+} */
 
 /* Game Card Content (Initially Hidden) */
-.game-card {
+/* .game-card {
     position: absolute;
     bottom: 20px;
     left: 15px;
@@ -813,31 +813,31 @@ body {
     color: #fff;
     text-align: left;
     z-index: 10;
-    opacity: 0; /* Hide content by default */
-    transform: translateY(30px); /* Initially position content below */
+    opacity: 0; 
+    transform: translateY(30px); 
     transition: opacity 0.3s ease, transform 0.3s ease;
-}
+} */
 
 /* On Hover - Show the Game Card Content */
-.game-item:hover .game-card {
-    opacity: 1; /* Show content on hover */
-    transform: translateY(0); /* Move content into view */
-}
+/* .game-item:hover .game-card {
+    opacity: 1;
+    transform: translateY(0); 
+} */
 
 /* Game Card Title */
-.game-card h3 {
+/* .game-card h3 {
     font-size: 1.8rem;
     margin-bottom: 10px;
-}
+} */
 
 /* Game Card Description */
-.game-card p {
+/* .game-card p {
     font-size: 1rem;
     margin-bottom: 20px;
-}
+} */
 
 /* Play Now Button */
-.game-btn {
+/* .game-btn {
     display: inline-block;
     padding: 10px 20px;
     background-color: #ff6347;
@@ -846,16 +846,16 @@ body {
     text-decoration: none;
     border-radius: 5px;
     transition: all 0.3s ease;
-}
+} */
 
 /* Hover Effect for Play Now Button */
-.game-btn:hover {
+/* .game-btn:hover {
     background-color: #ff4500;
     transform: scale(1.05);
-}
+} */
 
 /* Game Section Styling */
-.game-section {
+/* .game-section {
     padding: 50px 20px;
     background-color: #121212;
     color: #fff;
@@ -883,7 +883,7 @@ body {
 .game-controls {
     font-size: 1rem;
     color: #ccc;
-}
+} */
 
 /* Tetris Canvas */
 #tetris-game {

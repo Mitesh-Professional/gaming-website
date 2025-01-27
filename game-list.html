@@ -7,6 +7,8 @@
     <title>Game List - Ultimate Game Hub</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="assets/icons/icon.jpeg" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -23,74 +25,184 @@
     </nav>
 
     <!-- Game List Section -->
-    <section class="game-list">
-        <div class="container">
-            <h2 class="section-title">Explore Popular Games</h2>
-            <p class="section-subtitle">Dive into our collection of trending and classic games. Play and enjoy your favorite games now!</p>
-
-            <div class="game-gallery">
-
-                <div class="game-item">
-                    <div class="game-img-wrapper">
-                        <img src="assets/images/2337555c-d3e7-4dd3-8047-3c1b73897423.jpeg" alt="Tetris" class="game-img">
-                        <div class="game-card">
-                            <h3>Flappy Rocket</h3>
-                            <p>Classic block puzzle game. Fit the shapes and clear the lines!</p>
-                            <a href="games/flappy_rocket.html" class="game-btn">Play Now</a>
-                        </div>
+    <div class="container mx-auto p-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <img alt="Galactic Clash game cover" class="w-full h-64 object-cover"
+                    src="assets/images/318b5a22-1052-41cf-8719-d5698f8fcafa.jpeg" />
+                <div class="p-4">
+                    <h2 class="text-xl font-bold">
+                        Flappy Rocket
+                    </h2>
+                    <p class="text-gray-400">
+                        Sci-Fi Strategy | PC | Mobile
+                    </p>
+                    <div class="flex items-center mt-2">
+                        <span class="text-yellow-400">
+                            <i class="fas fa-star">
+                            </i>
+                            4.8/5
+                        </span>
+                        <span class="text-gray-400 ml-2">
+                            230k Reviews
+                        </span>
                     </div>
-                </div>
-                <!-- Game Item 1 -->
-                <div class="game-item">
-                    <div class="game-img-wrapper">
-                        <img src="assets/images/pacman-thumbnail.jpeg" alt="Tetris" class="game-img">
-                        <div class="game-card">
-                            <h3>Tetris</h3>
-                            <p>Classic block puzzle game. Fit the shapes and clear the lines!</p>
-                            <a href="games/tetris.html" class="game-btn">Play Now</a>
-                        </div>
+                    <div class="text-gray-400 mt-2">
+                        1.1M Downloads
                     </div>
-                </div>
-
-                <!-- Game Item 2 -->
-                <div class="game-item">
-                    <div class="game-img-wrapper">
-                        <img src="assets/images/call_of_duty.jpeg" alt="Pac-Man" class="game-img">
-                        <div class="game-card">
-                            <h3>Pac-Man</h3>
-                            <p>Chase dots, avoid ghosts, and eat your way to victory!</p>
-                            <a href="games/pacman.html" class="game-btn">Play Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Game Item 3 -->
-                <div class="game-item">
-                    <div class="game-img-wrapper">
-                        <img src="assets/images/tetris-thumbnail.png" alt="Space Invaders" class="game-img">
-                        <div class="game-card">
-                            <h3>Space Invaders</h3>
-                            <p>Defend Earth from waves of alien invaders. Blast them away!</p>
-                            <a href="games/space-invaders.html" class="game-btn">Play Now</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Game Item 4 -->
-                <div class="game-item">
-                    <div class="game-img-wrapper">
-                        <img src="assets/images/sonic-background.jpg" alt="Sonic the Hedgehog" class="game-img">
-                        <div class="game-card">
-                            <h3>Sonic the Hedgehog</h3>
-                            <p>Speed through loops and collect rings in this classic adventure!</p>
-                            <a href="games/snake.html" class="game-btn">Play Now</a>
-                        </div>
-                    </div>
+                    <a class="mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-block" href="games/flappy_rocket.html">
+                        Play Game
+                       </a>
                 </div>
             </div>
+            <!-- Card 2 -->
+            <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <img alt="Realm of Legends game cover" class="w-full h-64 object-cover"
+                    src="assets/images/2c50fe28-c928-4ea1-8970-c24a75a19f43.jpeg" />
+                <div class="p-4">
+                    <h2 class="text-xl font-bold">
+                        Tetris
+                    </h2>
+                    <p class="text-gray-400">
+                        RPG | PC | Mobile
+                    </p>
+                    <div class="flex items-center mt-2">
+                        <span class="text-yellow-400">
+                            <i class="fas fa-star">
+                            </i>
+                            4.8/5
+                        </span>
+                        <span class="text-gray-400 ml-2">
+                            1M Reviews
+                        </span>
+                    </div>
+                    <div class="text-gray-400 mt-2">
+                        4.3M Downloads
+                    </div>
+                    <a class="mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-block" href="games/tetris.html">
+                        Play Game
+                       </a>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <img alt="Space Infiltrators game cover" class="w-full h-64 object-cover"
+                    src="assets/images/6e34549f-bfe1-4ade-b23d-ccb81b6fe037.jpeg" />
+                <div class="p-4">
+                    <h2 class="text-xl font-bold">
+                        Pac-Man
+                    </h2>
+                    <p class="text-gray-400">
+                        Sci-Fi Action | PC | Mobile
+                    </p>
+                    <div class="flex items-center mt-2">
+                        <span class="text-yellow-400">
+                            <i class="fas fa-star">
+                            </i>
+                            4.7/5
+                        </span>
+                        <span class="text-gray-400 ml-2">
+                            920k Reviews
+                        </span>
+                    </div>
+                    <div class="text-gray-400 mt-2">
+                        2M Downloads
+                    </div>
+                    <a class="mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-block" href="games/pacman.html">
+                        Play Game
+                       </a>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <img alt="Superheroes United game cover" class="w-full h-64 object-cover"
+                    src="assets/images/2dcb13cb-7a6b-49d4-9345-ab7fdca05061.jpeg" />
+                <div class="p-4">
+                    <h2 class="text-xl font-bold">
+                        Space Invaders
+                    </h2>
+                    <p class="text-gray-400">
+                        Action-Adventure | PC | Mobile
+                    </p>
+                    <div class="flex items-center mt-2">
+                        <span class="text-yellow-400">
+                            <i class="fas fa-star">
+                            </i>
+                            4.8/5
+                        </span>
+                        <span class="text-gray-400 ml-2">
+                            682k Reviews
+                        </span>
+                    </div>
+                    <div class="text-gray-400 mt-2">
+                        982k Downloads
+                    </div>
+                    <a class="mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-block" href="games/space-invaders.html">
+                        Play Game
+                       </a>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <img alt="Virtual Builder: Metropolis game cover" class="w-full h-64 object-cover"
+                    src="assets/images/131c0849-dcdc-4be4-8ca6-a7f3b27e0280.jpeg" />
+                <div class="p-4">
+                    <h2 class="text-xl font-bold">
+                        Snake
+                    </h2>
+                    <p class="text-gray-400">
+                        Simulation | PC | Mobile
+                    </p>
+                    <div class="flex items-center mt-2">
+                        <span class="text-yellow-400">
+                            <i class="fas fa-star">
+                            </i>
+                            4.9/5
+                        </span>
+                        <span class="text-gray-400 ml-2">
+                            2.5M Reviews
+                        </span>
+                    </div>
+                    <div class="text-gray-400 mt-2">
+                        5.1M Downloads
+                    </div>
+                    <a class="mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded inline-block" href="games/snake.html">
+                        Play Game
+                       </a>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <!-- <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <img alt="League of Legends game cover" class="w-full h-64 object-cover"
+                    src="https://placehold.co/400x300?text=League+of+Legends" />
+                <div class="p-4">
+                    <h2 class="text-xl font-bold">
+                        League of Legends
+                    </h2>
+                    <p class="text-gray-400">
+                        Sci-Fi Action | PC | Mobile
+                    </p>
+                    <div class="flex items-center mt-2">
+                        <span class="text-yellow-400">
+                            <i class="fas fa-star">
+                            </i>
+                            4.8/5
+                        </span>
+                        <span class="text-gray-400 ml-2">
+                            5.4M Reviews
+                        </span>
+                    </div>
+                    <div class="text-gray-400 mt-2">
+                        6.8M Downloads
+                    </div>
+                    <button class="mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                        Play Game
+                    </button>
+                </div>
+            </div> -->
         </div>
-    </section>
-
+    </div>
     <!-- Footer Section -->
     <footer>
         <div class="container">
