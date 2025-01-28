@@ -1,4 +1,3 @@
-// Basic setup for Pac-Man game
 const canvas = document.getElementById('pacman-game');
 const ctx = canvas.getContext('2d');
 
@@ -12,11 +11,10 @@ const pacman = {
     color: 'yellow'
 };
 
-// Array to hold the balls (pellets)
 let balls = [];
-
-// Number of balls Pac-Man has eaten
 let ballsEaten = 0;
+let gameRunning = false;  // Track whether the game is already running
+let gameInterval;  // Variable to store the game loop interval
 
 // Create random balls within the canvas
 function createRandomBall() {
@@ -72,47 +70,57 @@ function updateGame() {
 let moveLeft = false, moveRight = false, moveUp = false, moveDown = false;
 
 document.addEventListener('keydown', (e) => {
+    // Prevent creating new balls and increasing speed when pressing Spacebar
+    if (e.key === ' ') {
+        return;  // Do nothing if the spacebar is pressed
+    }
+
+    // Adjust Pac-Man's angle based on the direction of movement
     if (e.key === 'ArrowLeft') {
         moveLeft = true;
         moveRight = false;
         moveUp = false;
         moveDown = false;
+        pacman.angleStart = 1.2 * Math.PI;  // Turn Pac-Man to the left
+        pacman.angleEnd = 2.8 * Math.PI;
     }
     if (e.key === 'ArrowRight') {
         moveRight = true;
         moveLeft = false;
         moveUp = false;
         moveDown = false;
+        pacman.angleStart = 0.2 * Math.PI;  // Turn Pac-Man to the right
+        pacman.angleEnd = 1.8 * Math.PI;
     }
     if (e.key === 'ArrowUp') {
         moveUp = true;
         moveLeft = false;
         moveRight = false;
         moveDown = false;
+        pacman.angleStart = 1.7 * Math.PI;  // Turn Pac-Man upwards
+        pacman.angleEnd = 1.3 * Math.PI;
     }
     if (e.key === 'ArrowDown') {
         moveDown = true;
         moveLeft = false;
         moveRight = false;
         moveUp = false;
+        pacman.angleStart = 0.7 * Math.PI;  // Turn Pac-Man downwards
+        pacman.angleEnd = 2.3 * Math.PI;
     }
 });
 
 // Move Pac-Man on the canvas
 function movePacman() {
-    // Left bound
     if (moveLeft && pacman.x - pacman.radius > 0) {
         pacman.x -= pacman.speed;
     }
-    // Right bound
     if (moveRight && pacman.x + pacman.radius < canvas.width) {
         pacman.x += pacman.speed;
     }
-    // Top bound
     if (moveUp && pacman.y - pacman.radius > 0) {
         pacman.y -= pacman.speed;
     }
-    // Bottom bound
     if (moveDown && pacman.y + pacman.radius < canvas.height) {
         pacman.y += pacman.speed;
     }
@@ -134,18 +142,35 @@ function checkCollisions() {
 function checkWinCondition() {
     if (balls.length === 0) {
         showWinMessage();  // Show the win message if no balls are left
+        clearInterval(gameInterval);  // Stop the game loop
+        gameRunning = false;  // Mark the game as not running
     }
+}
+
+// Reset the game state for a new game
+function resetGame() {
+    pacman.x = 200;
+    pacman.y = 200;
+    pacman.angleStart = 0.2 * Math.PI;
+    pacman.angleEnd = 1.8 * Math.PI;
+    balls = [];
+    ballsEaten = 0;
 }
 
 // Start the game when the 'Play' button is clicked
 document.getElementById('play').addEventListener('click', () => {
+    if (gameRunning) return;  // Prevent starting the game again if it's already running
+
+    gameRunning = true;  // Mark the game as running
+    resetGame();  // Reset the game state
+
     // Create some random balls when the game starts
     for (let i = 0; i < 10; i++) {
         createRandomBall();
     }
 
     // Game loop: Update the game state at 60 FPS
-    setInterval(() => {
+    gameInterval = setInterval(() => {
         movePacman();
         checkCollisions(); // Check for Pac-Man eating balls
         updateGame();
