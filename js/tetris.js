@@ -191,3 +191,60 @@ document.getElementById('play').addEventListener('click',()=>{
 
 
 
+// Mobile Touch controls (swipe and tap)
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+
+// Handle touch start
+canvas.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+});
+
+// Handle touch move (detect swipe gestures)
+canvas.addEventListener('touchmove', (e) => {
+    touchEndX = e.touches[0].clientX;
+    touchEndY = e.touches[0].clientY;
+});
+
+// Handle touch end
+canvas.addEventListener('touchend', (e) => {
+    // Swipe left or right to move the tetromino
+    if (Math.abs(touchEndX - touchStartX) > Math.abs(touchEndY - touchStartY)) {
+        if (touchEndX < touchStartX) {
+            // Swipe left
+            if (!gameOver) {
+                currentX--;
+                if (collision()) currentX++;
+            }
+        } else if (touchEndX > touchStartX) {
+            // Swipe right
+            if (!gameOver) {
+                currentX++;
+                if (collision()) currentX--;
+            }
+        }
+    }
+    
+    // Swipe down to accelerate the tetromino
+    if (Math.abs(touchEndY - touchStartY) > Math.abs(touchEndX - touchStartX)) {
+        if (touchEndY > touchStartY) {
+            // Swipe down (move tetromino down faster)
+            if (!gameOver) {
+                moveTetromino();
+            }
+        }
+    }
+});
+
+// Rotate on tap (single tap anywhere)
+canvas.addEventListener('touchend', (e) => {
+    if (Math.abs(touchEndX - touchStartX) < 30 && Math.abs(touchEndY - touchStartY) < 30) {
+        // Rotate tetromino on tap
+        if (!gameOver) {
+            rotateTetromino();
+        }
+    }
+});

@@ -1,6 +1,7 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 const gameOverScreen = document.getElementById("game-over");
+const playButton = document.getElementById("play");
 
 const rocketImage = new Image();
 rocketImage.src = "../assets/game_images/rocket_icon.png"; // Rocket Image URL
@@ -14,8 +15,8 @@ let rocket = {
     width: 50,
     height: 50,
     velocity: 0,  // Initial velocity
-    gravity: 0.2, // Slower fall speed
-    lift: -4,     // Slower upward speed
+    gravity: 0.05, // Slower fall speed
+    lift: -0.5,     // Slower upward speed
 };
 
 let pipes = [];
@@ -26,7 +27,7 @@ let pipeInterval = 90;
 let pipeTimer = 0;
 let score = 0;
 
-let gameRunning = true; // Game state flag
+let gameRunning = false; // Game state flag, set to false initially
 
 canvas.width = 800;
 canvas.height = 600;
@@ -152,13 +153,21 @@ function gameLoop() {
 // Wait for images to load before starting the game
 rocketImage.onload = () => {
     bgImage.onload = () => {
-        resetGame(); // Start the game after both images are loaded
+        // Initially hide the game over screen
+        gameOverScreen.classList.add("hidden");
     };
 };
 
+// Start game when play button is clicked
+playButton.addEventListener("click", () => {
+    gameRunning = true; // Enable the game
+    playButton.classList.add("hidden"); // Hide the play button once clicked
+    resetGame(); // Start the game
+});
+
 // Make the rocket go up when pressing the space key
 document.addEventListener("keydown", function (event) {
-    if (event.code === "Space") {
+    if (event.code === "Space" && gameRunning) {
         event.preventDefault(); 
         // Slow down the rocket's upward speed
         if (rocket.velocity > rocket.lift) {
@@ -169,4 +178,25 @@ document.addEventListener("keydown", function (event) {
 });
 
 // Restart button event listener
-document.getElementById('restartBtn').addEventListener('click', resetGame);
+document.getElementById('restartBtn').addEventListener('click', (event)=>{
+    document.getElementById('game-over').classList.add('hidden');
+    resetGame()
+
+});
+// Close Button Event Listener
+document.getElementById('gameOverClose').addEventListener('click', (event)=>{
+    document.getElementById('play').classList.remove('hidden');
+    document.getElementById('game-over').classList.add('hidden');
+});
+
+document.addEventListener("touchstart", function (event) {
+    if (gameRunning) {
+        event.preventDefault(); // Prevent default touch behavior (scrolling, zooming, etc.)
+        
+        // Slow down the rocket's upward speed
+        if (rocket.velocity > rocket.lift) {
+            rocket.velocity = rocket.lift;  // Slow the upward movement
+        }
+        rocket.velocity -= 1; // Apply gradual lift effect
+    }
+});

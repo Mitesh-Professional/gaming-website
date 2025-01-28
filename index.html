@@ -75,7 +75,8 @@
     </nav>
     <header class="relative h-screen flex flex-col justify-center items-center text-center">
         <img alt="Background image of a gamer with a mask"
-            class="absolute inset-0 w-full h-full object-cover opacity-20" src="assets/images/318b5a22-1052-41cf-8719-d5698f8fcafa.jpeg" />
+            class="absolute inset-0 w-full h-full object-cover opacity-20"
+            src="assets/images/318b5a22-1052-41cf-8719-d5698f8fcafa.jpeg" />
         <div class="relative z-10 fade-in">
             <p class="text-red-500">
                 WELCOME ASTRO GAMING ESPORT
@@ -89,7 +90,7 @@
                 LEARN MORE
             </button>
         </div>
-        <div class="absolute bottom-10 text-center bounce cursor-pointer">
+        <div class="absolute bottom-10 text-center bounce cursor-pointer" id="scrollButton">
             <i class="fas fa-chevron-down text-2xl">
             </i>
             <p>
@@ -135,7 +136,7 @@
         </div>
     </header> -->
 
-    <div class="container mx-auto p-4 bg-gradient-to-b from-red-900 to-black rounded-lg my-4">
+    <div class="container mx-auto p-4 bg-gradient-to-b from-red-900 to-black rounded-lg my-4" id="latestGameSection">
         <h2 class="text-2xl font-bold mb-4">
             Latest Game
         </h2>
@@ -343,7 +344,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials">
+    <!-- <section class="testimonials">
         <div class="container">
             <h2>What Our Users Say</h2>
             <div class="testimonial-cards">
@@ -356,11 +357,149 @@
                     <p>"I found so many great games here. It’s amazing how much variety GameHub offers!"</p>
                     <h4>- Sarah, Casual Gamer</h4>
                 </div>
-                <!-- Add more testimonials as needed -->
             </div>
         </div>
-    </section>
+    </section> -->
 
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black to-red-900 text-white">
+        <div class="text-center">
+            <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                What Our Clients Say!
+            </h2>
+            <p class="mt-4 text-lg leading-6 text-gray-300">
+                Our main focus is on quality and making sure you have everything you need to succeed.
+            </p>
+        </div>
+        <div class="mt-12 grid gap-8 lg:grid-cols-3">
+            <div class="bg-black bg-opacity-50 p-6 rounded-lg shadow-lg">
+                <div class="flex items-center">
+                    <img alt="Profile picture of Sadie Berlin" class="w-12 h-12 rounded-full"
+                        src="https://placehold.co/100x100" />
+                    <div class="ml-4">
+                        <h3 class="text-lg font-medium text-white">
+                            Sadie Berlin
+                        </h3>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h4 class="text-xl font-semibold text-white">
+                        Incredibly Useful Product
+                    </h4>
+                    <p class="mt-2 text-gray-400">
+                        We proudly analyze the industries most detailed statistics. We are all professionally trained to
+                        fulfill service standards.
+                    </p>
+                    <div class="mt-4 flex items-center">
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400">
+                            </i>
+                            <i class="fas fa-star text-yellow-400">
+                            </i>
+                            <i class="fas fa-star text-yellow-400">
+                            </i>
+                            <i class="fas fa-star text-yellow-400">
+                            </i>
+                            <i class="fas fa-star text-yellow-400">
+                            </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-black bg-opacity-50 p-6 rounded-lg shadow-lg">
+                <div class="flex items-center">
+                    <img alt="Profile picture of Sadie Berlin" class="w-12 h-12 rounded-full"
+                        src="https://placehold.co/100x100" />
+                    <div class="ml-4">
+                        <h3 class="text-lg font-medium text-white">
+                            Sadie Berlin
+                        </h3>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h4 class="text-xl font-semibold text-white">
+                        Incredibly Useful Product
+                    </h4>
+                    <p class="mt-2 text-gray-400">
+                        We proudly analyze the industries most detailed statistics. We are all professionally trained to
+                        fulfill service standards.
+                    </p>
+                    <div class="mt-4 flex items-center">
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400">
+                            </i>
+                            <i class="fas fa-star text-yellow-400">
+                            </i>
+                            <i class="fas fa-star text-yellow-400">
+                            </i>
+                            <i class="fas fa-star text-yellow-400">
+                            </i>
+                            <i class="fas fa-star text-yellow-400">
+                            </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-black bg-opacity-50 p-6 rounded-lg shadow-lg">
+                <div class="flex items-center">
+                    <img alt="Profile picture of Sadie Berlin" class="w-12 h-12 rounded-full"
+                        src="https://placehold.co/100x100" />
+                    <div class="ml-4">
+                        <h3 class="text-lg font-medium text-white">
+                            Sadie Berlin
+                        </h3>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h4 class="text-xl font-semibold text-white">
+                        Incredibly Useful Product
+                    </h4>
+                    <p class="mt-2 text-gray-400">
+                        We proudly analyze the industries most detailed statistics. We are all professionally trained to
+                        fulfill service standards.
+                    </p>
+                    <div class="mt-4 flex items-center">
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400">
+                            </i>
+                            <i class="fas fa-star text-yellow-400">
+                            </i>
+                            <i class="fas fa-star text-yellow-400">
+                            </i>
+                            <i class="fas fa-star text-yellow-400">
+                            </i>
+                            <i class="fas fa-star text-yellow-400">
+                            </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 text-center">
+            <h3 class="text-4xl font-extrabold text-white">
+                456+
+            </h3>
+            <p class="mt-2 text-lg text-gray-300">
+                Customers Have Given Rating for Support
+            </p>
+            <div class="mt-4 flex justify-center items-center">
+                <div class="flex items-center">
+                    <i class="fas fa-star text-yellow-400">
+                    </i>
+                    <i class="fas fa-star text-yellow-400">
+                    </i>
+                    <i class="fas fa-star text-yellow-400">
+                    </i>
+                    <i class="fas fa-star text-yellow-400">
+                    </i>
+                    <i class="fas fa-star text-yellow-400">
+                    </i>
+                </div>
+                <p class="ml-2 text-lg text-gray-300">
+                    Average rating 5/5
+                </p>
+            </div>
+        </div>
+    </div>
 
     <!-- Latest News Section -->
     <section class="latest-news">

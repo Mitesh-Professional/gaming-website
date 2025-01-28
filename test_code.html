@@ -1,0 +1,44 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Game Over
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .text-texture {
+            background: url('https://as1.ftcdn.net/v2/jpg/02/76/44/92/1000_F_276449235_z71XmvtwDHfqxNt6UCK5yl4mAplD3cds.jpg') repeat;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.9;
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+  </style>
+ </head>
+ <body class="bg-black">
+  <section class="flex items-center justify-center min-h-screen relative">
+   <img alt="A shattered glass effect with a blurred cityscape in the background and a red hue" class="w-full h-full object-cover absolute inset-0 z-0" src="assets/game_images/game_over_image.jpg"/>
+   <div class="relative z-10 text-center">
+    <h1 class="text-6xl md:text-8xl lg:text-9xl font-bold text-texture text-shadow" id="restartBtn">
+     GAME OVER
+    </h1>
+    <div class="mt-8 space-x-4">
+     <button class="px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition duration-300">
+      Restart
+     </button>
+     <button class="px-6 py-3 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition duration-300">
+      Close
+     </button>
+    </div>
+   </div>
+  </section>
+ </body>
+</html>

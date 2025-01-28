@@ -257,10 +257,12 @@ body {
 
 /* Footer Styles */
 .footer {
+    position: relative;
     background-color: #1a1a1a;
     color: #fff;
     padding: 40px 20px;
     font-family: Arial, sans-serif;
+    z-index: 99;
 }
 
 .footer .footer-content {
@@ -1147,26 +1149,26 @@ canvas {
     background-color: #9c0505;
 }
 
-
-#game-over {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 32px;
-    color: #333;
-}
-
 .hidden {
     display: none;
 }
-#restartBtn{
-    background-color: #ff6347;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    border-radius: 5px;
+
+
+/* Required Css Please Don't Remove */
+.game-section {
+    padding: 50px 20px;
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+}
+.game-title {
+    font-size: 2.5rem;
+    color: #ff6347;
+    margin-bottom: 15px;
+}
+
+.game-description {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 40px;
 }
