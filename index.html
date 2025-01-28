@@ -19,6 +19,45 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .bounce {
+            animation: bounce 2s infinite;
+        }
     </style>
 </head>
 
@@ -34,15 +73,67 @@
             </ul>
         </div>
     </nav>
-
+    <header class="relative h-screen flex flex-col justify-center items-center text-center">
+        <img alt="Background image of a gamer with a mask"
+            class="absolute inset-0 w-full h-full object-cover opacity-20" src="assets/images/318b5a22-1052-41cf-8719-d5698f8fcafa.jpeg" />
+        <div class="relative z-10 fade-in">
+            <p class="text-red-500">
+                WELCOME ASTRO GAMING ESPORT
+            </p>
+            <h1 class="text-5xl md:text-7xl font-bold">
+                PROFESSIONAL ESPORT
+                <br />
+                GLOBAL TEAM
+            </h1>
+            <button class="mt-6 px-6 py-3 bg-red-500 text-black font-bold rounded cursor-pointer">
+                LEARN MORE
+            </button>
+        </div>
+        <div class="absolute bottom-10 text-center bounce cursor-pointer">
+            <i class="fas fa-chevron-down text-2xl">
+            </i>
+            <p>
+                SCROLL DOWN
+            </p>
+        </div>
+    </header>
+    <div class="container mx-auto px-4 py-16 flex flex-col lg:flex-row items-center">
+        <div class="lg:w-1/2 mb-8 lg:mb-0">
+            <div class="border-b-4 border-red-500 w-16 mb-4">
+            </div>
+            <h1 class="text-4xl font-bold mb-4">
+                ABOUT THE
+                <span class="text-red-500">
+                    ANUBIS
+                </span>
+                ESPORTS TEAM
+            </h1>
+            <p class="text-gray-400 mb-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique consectetur odio, at posuere
+                metus egestas vel.
+            </p>
+            <button
+                class="bg-transparent border-2 border-red-500 text-red-500 py-2 px-4 rounded hover:bg-red-500 hover:text-gray-900 transition duration-300 cursor-pointer">
+                MEET THE TEAM
+            </button>
+        </div>
+        <div class="lg:w-1/2 relative">
+            <img alt="A person wearing a headset and playing a video game on a computer screen" class="rounded-lg"
+                src="assets/images/2337555c-d3e7-4dd3-8047-3c1b73897423.jpeg" />
+            <div class="absolute inset-0 flex items-center justify-center cursor-pointer">
+                <i class="fas fa-play-circle text-white text-6xl">
+                </i>
+            </div>
+        </div>
+    </div>
     <!-- Hero Section with RGB Effect -->
-    <header class="hero">
+    <!-- <header class="hero">
         <div class="container">
             <h1 class="hero-title">Welcome to the Ultimate Game Hub!</h1>
             <p class="hero-subtitle">Play your favorite games right here, right now!</p>
             <a href="game-list.html" class="btn">Start Playing</a>
         </div>
-    </header>
+    </header> -->
 
     <div class="container mx-auto p-4 bg-gradient-to-b from-red-900 to-black rounded-lg my-4">
         <h2 class="text-2xl font-bold mb-4">
@@ -51,7 +142,8 @@
         <div class="flex space-x-4 overflow-x-auto no-scrollbar">
             <a class="bg-red-900 p-4 rounded-lg min-w-[200px] block" href="games/flappy_rocket.html">
                 <img alt="Game cover image of a character with a yellow mask"
-                    class="w-full h-48 object-cover rounded-lg mb-2" src="assets/images/318b5a22-1052-41cf-8719-d5698f8fcafa.jpeg" />
+                    class="w-full h-48 object-cover rounded-lg mb-2"
+                    src="assets/images/318b5a22-1052-41cf-8719-d5698f8fcafa.jpeg" />
                 <h3 class="text-lg font-semibold">
                     Bayonetta
                 </h3>
